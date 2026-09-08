@@ -175,3 +175,6 @@ const updatedbook = {
   pages: 1210,
 };
 updatedbook;
+
+const summary = `${title}, was written by ${author} `;
+summary;
