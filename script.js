@@ -178,3 +178,8 @@ updatedbook;
 
 const summary = `${title}, was written by ${author} `;
 summary;
+
+const titlerange =
+  title == "The Lord of the Rings" ? "yes,it is true" : "no,it is not";
+titlerange;
+console.log(`the title of the book is ${title}`);
