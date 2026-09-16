@@ -176,7 +176,15 @@ const updatedbook = {
 };
 updatedbook;
 
+// function getyear(str){
+//   return str.split("-")[0];
+// }
+
+const getyear = (str) => str.split("-")[0];
+console.log(getyear(title));
+
 const summary = `${title}, was written by ${author} `;
+getyear(title);
 summary;
 
 const titlerange =
