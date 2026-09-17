@@ -144,7 +144,9 @@ function getBook(id) {
 }
 
 // Destructuring // for objects
-const book = getBook(1);
+
+/*
+const book = getBook(3);
 
 // const title = book.title;
 // const author = book.author;
@@ -191,3 +193,55 @@ const titlerange =
   title == "The Lord of the Rings" ? "yes,it is true" : "no,it is not";
 titlerange;
 console.log(`the title of the book is ${title}`);
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  librarything;
+  return goodreads + librarything;
+}
+console.log(getTotalReviewCount(book));
+*/
+
+//array map method
+
+const books = getBooks();
+books;
+
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x);
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+essentialData;
+
+//array filter method
+
+const longbooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longbooks;
+
+const adventurebooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
+adventurebooks;
+
+//array reduce method
+
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+pagesAllBooks;
+
+//array sort method
+
+const arr = [7, 9, 8, 6, 8, 7];
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+sortedByPages;
